@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VexoriaMC — Survival • Lifesteal • PvP</title>
+<meta name="description" content="VexoriaMC — Public Minecraft Survival, Lifesteal and PvP server.">
+<style>
+:root{
+  --bg:#050507;--panel:#0d0d12;--panel2:#12121a;--red:#ff2638;--red2:#b90f20;
+  --text:#f7f7fb;--muted:#a6a6b3;--line:#24242f;--green:#42e58b;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 80% -10%,#3a0a12 0,transparent 32%),var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(5,5,7,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:.5px;font-size:20px}.brand span{color:var(--red)}
+.navlinks{display:flex;gap:22px;color:#d2d2da;font-size:14px}.navlinks a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;border:1px solid #343440;font-weight:800;cursor:pointer}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 10px 35px #ff26382b}.btn.dark{background:#111117}
+.hero{min-height:650px;display:grid;place-items:center;text-align:center;padding:85px 0 70px}
+.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #4b1820;background:#180b0e;color:#ff9da7;border-radius:999px;padding:8px 13px;font-size:13px;font-weight:800}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+h1{font-size:clamp(48px,9vw,92px);line-height:.94;margin:22px 0 18px;letter-spacing:-4px}
+h1 span{color:var(--red)}.hero p{max-width:650px;margin:0 auto 30px;color:var(--muted);font-size:18px;line-height:1.7}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.ipbox{margin:42px auto 0;width:min(650px,100%);padding:18px;background:linear-gradient(135deg,#15151d,#0b0b10);border:1px solid var(--line);border-radius:15px}
+.iprow{display:flex;align-items:center;justify-content:space-between;gap:15px}.ip{font-family:ui-monospace,monospace;font-size:17px}.online{color:var(--green);font-size:13px;font-weight:800}
+section{padding:75px 0}.sectionhead{text-align:center;margin-bottom:38px}.eyebrow{color:#ff6875;font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase}.sectionhead h2{font-size:38px;margin:8px 0}.sectionhead p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:25px;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#54232a}
+.price{font-size:35px;font-weight:950;margin:15px 0}.price small{font-size:14px;color:var(--muted);font-weight:600}.card ul{list-style:none;padding:0;color:#c9c9d2;line-height:2;margin:20px 0 25px}.card li::before{content:"✓";color:#ff5360;font-weight:900;margin-right:9px}
+.feature{display:flex;gap:14px}.icon{width:45px;height:45px;display:grid;place-items:center;border-radius:12px;background:#1b0b0e;font-size:21px;flex:none}
+.status{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.stat{padding:22px;border:1px solid var(--line);background:var(--panel);border-radius:15px;text-align:center}.stat b{display:block;font-size:25px;margin-top:6px}.stat span{color:var(--muted);font-size:13px}
+.shopgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.product{padding:20px;border:1px solid var(--line);background:var(--panel);border-radius:15px}.product .emoji{font-size:30px}.product h3{margin:10px 0 5px}.product p{color:var(--muted);font-size:13px;margin:0 0 14px}.product .pprice{font-weight:900;color:#ff6b76}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:15px}.rule{padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:15px}.rule b{display:block;margin-bottom:7px}.rule span{color:var(--muted);font-size:14px;line-height:1.6}
+.cta{background:linear-gradient(135deg,#24070c,#0e0e13);border:1px solid #54202a;border-radius:22px;padding:45px;text-align:center}.cta h2{font-size:38px;margin:0 0 10px}.cta p{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#888895}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.tiny{font-size:12px;color:#6f6f7b}
+@media(max-width:850px){.navlinks{display:none}.grid{grid-template-columns:1fr}.shopgrid{grid-template-columns:1fr 1fr}.status{grid-template-columns:1fr}.rules{grid-template-columns:1fr}.hero{min-height:570px}h1{letter-spacing:-2px}}
+@media(max-width:500px){.shopgrid{grid-template-columns:1fr}.iprow{flex-direction:column}.cta{padding:30px 20px}}
+</style>
+</head>
+<body>
+<nav><div class="container navin">
+  <a class="brand" href="#">VEXORIA<span>MC</span></a>
+  <div class="navlinks">
+    <a href="#store">Store</a><a href="#modes">Modes</a><a href="#rules">Rules</a><a href="#support">Support</a><a href="#discord">Discord</a>
+  </div>
+  <a class="btn red" href="#store">Shop Now</a>
+</div></nav>
+
+<header class="hero"><div class="container">
+  <div class="badge"><span class="dot"></span> SERVER ONLINE</div>
+  <h1>RULE THE<br><span>VEXORIA</span> REALM</h1>
+  <p>Survival. Lifesteal. PvP. Build your empire, protect your hearts and fight your way to the top.</p>
+  <div class="actions"><a class="btn red" href="#store">🛒 Open Store</a><a class="btn dark" href="#modes">⚔ Explore Server</a></div>
+  <div class="ipbox">
+    <div class="iprow"><div><div class="tiny">JAVA SERVER IP</div><div class="ip" id="ip">play.vexoriamc.net</div></div><button class="btn dark" onclick="copyIP()">Copy IP</button></div>
+  </div>
+</div></header>
+
+<section id="modes"><div class="container">
+  <div class="sectionhead"><div class="eyebrow">The Network</div><h2>Choose Your Fight</h2><p>Built for competitive players and survival grinders.</p></div>
+  <div class="grid">
+    <div class="card feature"><div class="icon">❤️</div><div><h3>Lifesteal</h3><p>Fight for hearts and climb the leaderboard.</p></div></div>
+    <div class="card feature"><div class="icon">⚔️</div><div><h3>PvP</h3><p>Battle other players and prove your skill.</p></div></div>
+    <div class="card feature"><div class="icon">🌎</div><div><h3>Survival</h3><p>Build, trade, explore and create your legacy.</p></div></div>
+  </div>
+  <div class="status" style="margin-top:18px">
+    <div class="stat"><span>Players Online</span><b>--</b></div>
+    <div class="stat"><span>Server Version</span><b>1.21.x</b></div>
+    <div class="stat"><span>Bedrock Port</span><b>19132</b></div>
+  </div>
+</div></section>
+
+<section id="store"><div class="container">
+  <div class="sectionhead"><div class="eyebrow">Vexoria Store</div><h2>Cheap. Clean. Powerful.</h2><p>Support the server with ranks, keys and cosmetics.</p></div>
+  <div class="grid">
+    <div class="card"><div class="eyebrow">⭐ VIP</div><div class="price">₹29 <small>/ Rs.49</small></div><ul><li>VIP Prefix</li><li>2 Homes</li><li>VIP Kit</li><li>VIP Cosmetic</li></ul><button class="btn red buy" data-product="VIP Rank">Buy Now</button></div>
+    <div class="card"><div class="eyebrow">💎 PREMIUM</div><div class="price">₹59 <small>/ Rs.99</small></div><ul><li>Everything in VIP</li><li>4 Homes</li><li>Premium Kit</li><li>Join Effect</li></ul><button class="btn red buy" data-product="Premium Rank">Buy Now</button></div>
+    <div class="card"><div class="eyebrow">🔥 LEGEND</div><div class="price">₹99 <small>/ Rs.169</small></div><ul><li>Everything in Premium</li><li>6 Homes</li><li>Legend Kit</li><li>Particle Effect</li></ul><button class="btn red buy" data-product="Legend Rank">Buy Now</button></div>
+    <div class="card"><div class="eyebrow">👑 GOD</div><div class="price">₹149 <small>/ Rs.249</small></div><ul><li>Everything in Legend</li><li>8 Homes</li><li>God Kit</li><li>Exclusive Cosmetics</li></ul><button class="btn red buy" data-product="God Rank">Buy Now</button></div>
+    <div class="card"><div class="eyebrow">⚡ TITAN</div><div class="price">₹229 <small>/ Rs.399</small></div><ul><li>Everything in God</li><li>10 Homes</li><li>Titan Kit</li><li>Exclusive Effects</li></ul><button class="btn red buy" data-product="Titan Rank">Buy Now</button></div>
+    <div class="card"><div class="eyebrow">🩸 VEXORIA</div><div class="price">₹349 <small>/ Rs.599</small></div><ul><li>Everything in Titan</li><li>12 Homes</li><li>Vexoria Kit</li><li>Exclusive Cosmetics</li></ul><button class="btn red buy" data-product="Vexoria Rank">Buy Now</button></div>
+  </div>
+  <div class="sectionhead" style="margin-top:65px"><div class="eyebrow">Keys & Items</div><h2>Quick Shop</h2></div>
+  <div class="shopgrid">
+    <div class="product"><div class="emoji">🔑</div><h3>Rare Key</h3><p>Unlock the Rare Crate.</p><div class="pprice">₹10 / Rs.19</div></div>
+    <div class="product"><div class="emoji">🟣</div><h3>Epic Key</h3><p>Unlock the Epic Crate.</p><div class="pprice">₹19 / Rs.29</div></div>
+    <div class="product"><div class="emoji">🟡</div><h3>Legendary Key</h3><p>Unlock the Legendary Crate.</p><div class="pprice">₹29 / Rs.49</div></div>
+    <div class="product"><div class="emoji">🔴</div><h3>Mythic Key</h3><p>Unlock the Mythic Crate.</p><div class="pprice">₹49 / Rs.79</div></div>
+    <div class="product"><div class="emoji">❤️</div><h3>Heart Token</h3><p>Balanced Lifesteal item.</p><div class="pprice">₹10 / Rs.19</div></div>
+    <div class="product"><div class="emoji">✨</div><h3>Kill Effect</h3><p>Cosmetic effect for PvP.</p><div class="pprice">₹19 / Rs.29</div></div>
+    <div class="product"><div class="emoji">💫</div><h3>Particle Pack</h3><p>Cosmetic particles.</p><div class="pprice">₹29 / Rs.49</div></div>
+    <div class="product"><div class="emoji">💰</div><h3>10K Coins</h3><p>Starter server currency.</p><div class="pprice">₹10 / Rs.19</div></div>
+  </div>
+</div></section>
+
+<section id="rules"><div class="container">
+  <div class="sectionhead"><div class="eyebrow">Play Fair</div><h2>Server Rules</h2><p>Keep Vexoria fun and competitive for everyone.</p></div>
+  <div class="rules">
+    <div class="rule"><b>01 — No Cheats</b><span>Hacked clients, unfair automation and cheating are not allowed.</span></div>
+    <div class="rule"><b>02 — No Exploits</b><span>Do not abuse bugs or glitches for an unfair advantage.</span></div>
+    <div class="rule"><b>03 — Respect Players</b><span>No serious harassment, threats or targeted abuse.</span></div>
+    <div class="rule"><b>04 — No Scams</b><span>Do not deceive players or impersonate staff.</span></div>
+    <div class="rule"><b>05 — No Spam</b><span>No flooding, malicious advertising or disruptive behavior.</span></div>
+    <div class="rule"><b>06 — Staff Decisions</b><span>Follow staff instructions and use support tickets for appeals.</span></div>
+  </div>
+</div></section>
+
+<section id="support"><div class="container"><div class="cta">
+  <div class="eyebrow">Need Help?</div><h2>Vexoria Support Center</h2><p>Open a ticket for purchases, bugs, player reports or punishment appeals.</p>
+  <div class="actions"><a class="btn red" href="https://discord.gg/YOURINVITE" target="_blank">🎫 Open Discord Support</a><a class="btn dark" href="mailto:support@vexoriamc.net">✉ Email Support</a></div>
+</div></div></section>
+
+<section id="discord"><div class="container">
+  <div class="sectionhead"><div class="eyebrow">Community</div><h2>Join the Discord</h2><p>Announcements, events, giveaways, support and the Vexoria community.</p></div>
+  <div style="text-align:center"><a class="btn red" href="https://discord.gg/YOURINVITE" target="_blank">💬 Join VexoriaMC Discord</a></div>
+</div></section>
+
+<footer><div class="container foot"><div><b>VEXORIA<span style="color:var(--red)">MC</span></b><div class="tiny">Survival • Lifesteal • PvP</div></div><div class="tiny">© 2026 VexoriaMC. Not affiliated with Mojang or Microsoft.</div></div></footer>
+
+<script>
+function copyIP(){navigator.clipboard?.writeText(document.getElementById('ip').textContent);alert('Server IP copied!')}
+document.querySelectorAll('.buy').forEach(b=>b.onclick=()=>alert('Checkout is not connected yet. Connect your store/payment provider and replace this button action.'))
+</script>
+</body>
+</html>
